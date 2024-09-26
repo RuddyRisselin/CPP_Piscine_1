@@ -2,7 +2,10 @@
 #define CONTACT_HPP
 
 #include <iostream>
-#include <string>
+#include <iomanip>
+#include <string.h>
+#include <cctype>
+#include <limits>
 
 class Contact {
 private:
@@ -11,6 +14,7 @@ private:
     std::string nickname;
     std::string phoneNumber;
     std::string darkestSecret;
+    std::string index;
 
 public:
     // Constructeur
@@ -18,6 +22,12 @@ public:
 
     // Méthodes pour afficher le contact
     void displayContact() const;
+    void init(void);
+    std::string GetInput(std::string str);
+    void Layout(int index);
+    std::string PrintLen(std::string str);
+    void setIndex(int i);
+
 
     // Mutateurs (setters)
     void setFirstName(const std::string& fn);

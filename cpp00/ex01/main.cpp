@@ -4,16 +4,20 @@
 int main()
 {
     PhoneBook PhoneBook;
-    
-    PhoneBook.Contacts[0].setFirstName("John");
-    PhoneBook.Contacts[0].setLastName("Doe");
-    PhoneBook.Contacts[0].setNickname("Johnny");
-    PhoneBook.Contacts[0].setPhoneNumber("123-456-7890");
-    PhoneBook.Contacts[0].setDarkestSecret("Afraid of the dark");
 
-    std::cout << "Contact 1 details:" << std::endl;
+    std::string input = "";
+    std::cout << "\nWelcome to Your PhoneBook \n";
+    while (input.compare("EXIT") != 0)
+    {
+        if (input.compare("ADD") == 0)
+            PhoneBook.addContact();
+        if (input.compare("SEARCH") == 0) {
+            PhoneBook.PrintContact();
+            PhoneBook.SearchContact();
+        }
+        std::cout << "> " << std::flush;
+        std::cin >> input;
+    }
 
-    PhoneBook.Contacts[0].displayContact();
-
-    return 0;
+    return (0);
 }

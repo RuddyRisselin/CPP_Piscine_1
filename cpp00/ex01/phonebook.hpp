@@ -8,10 +8,14 @@
 class PhoneBook {
 
 private:
-public:
 	Contact Contacts[8];
+
+public:
 	PhoneBook();
-	
+	void addContact(void);
+	void PrintContact(void);
+	void SearchContact(void);
+	int GetIndex(std::string str);
 };
 
 #endif
