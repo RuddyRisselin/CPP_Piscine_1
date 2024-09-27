@@ -7,6 +7,9 @@ int main()
 
     std::string input = "";
     std::cout << "\nWelcome to Your PhoneBook \n";
+    std::cout << "\nUse ADD to add a contact";
+    std::cout << "\nUse SEARCH to search a contact";
+    std::cout << "\nUse EXIT to exit\n";
     while (input.compare("EXIT") != 0)
     {
         if (input.compare("ADD") == 0)

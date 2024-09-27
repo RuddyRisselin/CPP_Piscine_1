@@ -18,15 +18,18 @@ std::string Contact::GetInput(std::string str)
     {
         std::cout << str << std::flush;
         std::getline(std::cin, input);
-         if (std::cin.good() && !input.empty())
+        if (std::cin.good() && !input.empty())
             valid = 1;
-         else
+        else
         {
             std::cin.clear();
             std::cout << "Invalid input; please try again.\n";
         }
     }
     return (input);
+}
+bool Contact::isEmpty() {
+        return Contact::firstName.empty() && Contact::lastName.empty() && Contact::nickname.empty() && Contact::phoneNumber.empty() && Contact::darkestSecret.empty();
 }
 
 void Contact::setIndex(int i){

@@ -27,7 +27,7 @@ public:
     void Layout(int index);
     std::string PrintLen(std::string str);
     void setIndex(int i);
-
+    bool isEmpty();
 
     // Mutateurs (setters)
     void setFirstName(const std::string& fn);
