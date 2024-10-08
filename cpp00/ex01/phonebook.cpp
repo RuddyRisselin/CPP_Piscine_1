@@ -4,8 +4,8 @@ PhoneBook::PhoneBook() {};
 
 void PhoneBook::SearchContact()
 {
-	long long int index = PhoneBook::GetIndex("Please enter the contact index: ");
-	PhoneBook::Contacts[index].displayContact();
+	long long int index = this->GetIndex("Please enter the contact index: ");
+	this->Contacts[index].displayContact();
 }
 
 int PhoneBook::GetIndex(std::string str)
@@ -35,8 +35,8 @@ void PhoneBook::addContact(void)
 {
 	static int i;
 
-	PhoneBook::Contacts[i % 8].init();
-	PhoneBook::Contacts[i % 8].setIndex(i);
+	this->Contacts[i % 8].init();
+	this->Contacts[i % 8].setIndex(i);
 	i++;
 }
 
@@ -46,7 +46,7 @@ void PhoneBook::PrintContact(void)
 	std::cout << "------------| PHONEBOOK |------------\n";
 	while (i < 8)
 	{
-		PhoneBook::Contacts[i].Layout(i);
+		this->Contacts[i].Layout(i);
 		i++;
 	}
 	std::cout << "\n";

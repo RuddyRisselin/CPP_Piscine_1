@@ -29,11 +29,11 @@ std::string Contact::GetInput(std::string str)
     return (input);
 }
 bool Contact::isEmpty() {
-        return Contact::firstName.empty() && Contact::lastName.empty() && Contact::nickname.empty() && Contact::phoneNumber.empty() && Contact::darkestSecret.empty();
+        return this->firstName.empty() && this->lastName.empty() && this->nickname.empty() && this->phoneNumber.empty() && this->darkestSecret.empty();
 }
 
 void Contact::setIndex(int i){
-    Contact::index = i;
+    this->index = i;
 }
 
 std::string Contact::PrintLen(std::string str)
@@ -46,22 +46,22 @@ std::string Contact::PrintLen(std::string str)
 void Contact::init()
 {
     std::cin.ignore();
-    Contact::firstName = GetInput("Please enter you first name: ");
-    Contact::lastName = GetInput("Please enter you last name: ");
-    Contact::nickname = GetInput("Please enter you nickname: ");
-    Contact::phoneNumber = GetInput("Please enter you phone number: ");
-    Contact::darkestSecret = GetInput("Please enter you darkest secret: ");
+    this->firstName = GetInput("Please enter you first name: ");
+    this->lastName = GetInput("Please enter you last name: ");
+    this->nickname = GetInput("Please enter you nickname: ");
+    this->phoneNumber = GetInput("Please enter you phone number: ");
+    this->darkestSecret = GetInput("Please enter you darkest secret: ");
     std::cout << std::endl;
 }
 
 void Contact::Layout(int index)
 {
-        if (Contact::firstName.empty() || Contact::lastName.empty() || Contact::nickname.empty())
+    if (this->firstName.empty() || this->lastName.empty() || this->nickname.empty())
         return ;
     std::cout << "|" << std::setw(10) << index << std::flush;
-    std::cout << "|" << std::setw(10) << Contact::PrintLen(Contact::firstName) << std::flush;
-    std::cout << "|" << std::setw(10) << Contact::PrintLen(Contact::lastName) << std::flush;
-    std::cout << "|" << std::setw(10) << Contact::PrintLen(Contact::nickname) << std::flush;
+    std::cout << "|" << std::setw(10) << this->PrintLen(this->firstName) << std::flush;
+    std::cout << "|" << std::setw(10) << this->PrintLen(this->lastName) << std::flush;
+    std::cout << "|" << std::setw(10) << this->PrintLen(this->nickname) << std::flush;
     std::cout << "|\n";
 }
 

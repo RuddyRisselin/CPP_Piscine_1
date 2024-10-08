@@ -21,6 +21,5 @@ int main()
         std::cout << "> " << std::flush;
         std::cin >> input;
     }
-
     return (0);
 }

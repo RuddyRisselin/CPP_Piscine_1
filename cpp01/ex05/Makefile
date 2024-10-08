@@ -1,9 +1,7 @@
-NAME = Weapon
+NAME = Harl
 
 SRC = main.cpp \
-	  Weapon.cpp \
-	  HumanA.cpp \
-	  HumanB.cpp \
+	  Harl.cpp \
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
