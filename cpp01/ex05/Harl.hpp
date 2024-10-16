@@ -16,4 +16,6 @@ public:
 	void complain( std::string level );
 };
 
+typedef void (Harl::*HarlMemFn)(void);
+
 #endif

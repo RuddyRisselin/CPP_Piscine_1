@@ -7,7 +7,12 @@ int main(void)
 
 	while (input.compare("exit"))
 	{
-		std::cout << "Please enter a level between 0 and 3 :" << std::endl;
+		std::cout << "Please enter a level  :" << std::endl;
+		std::cout << "\t-debug" << std::endl;
+		std::cout << "\t-info" << std::endl;
+		std::cout << "\t-warning" << std::endl;
+		std::cout << "\t-error" << std::endl;
+
 		std::cin >> input;
 		harl.complain(input);
 	}

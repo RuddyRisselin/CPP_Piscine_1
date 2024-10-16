@@ -26,6 +26,17 @@ void Harl::error( void )
 
 void	Harl::complain(std::string level)
 {
-	std::cout << level << std::endl;
-	this->error();
+	std::string levels[] = { "debug", "info", "warning", "error" };
+
+	HarlMemFn functions[] = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
+	for (int i = 0; i < 4; i++)
+	{
+        if (levels[i] == level)
+		{
+            (this->*functions[i])();
+			std::cout << "\n";
+            return;
+        }
+    }
+	std::cout << "Invalid complaint level!" << std::endl;
 }
