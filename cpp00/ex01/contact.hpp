@@ -6,6 +6,7 @@
 #include <string.h>
 #include <cctype>
 #include <limits>
+#include <cstdlib>
 
 class Contact {
 private:

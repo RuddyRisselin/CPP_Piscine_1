@@ -13,21 +13,30 @@ void Contact::setDarkestSecret(const std::string& ds) { this->darkestSecret = ds
 std::string Contact::GetInput(std::string str)
 {
     std::string input;
-    int valid = 0;
-    while (!valid)
+    while (true)
     {
         std::cout << str << std::flush;
-        std::getline(std::cin, input);
-        if (std::cin.good() && !input.empty())
-            valid = 1;
-        else
+        if (!std::getline(std::cin, input))
         {
-            std::cin.clear();
-            std::cout << "Invalid input; please try again.\n";
+            if (std::cin.eof())
+            {
+                std::cerr << "\nInput stream closed (Ctrl+D detected).\n";
+                std::exit(EXIT_FAILURE);
+            }
+            else
+            {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Invalid input; please try again.\n";
+            }
         }
+        else if (!input.empty())
+            return input;
+        else
+            std::cout << "Input cannot be empty; please try again.\n";
     }
-    return (input);
 }
+
 bool Contact::isEmpty() {
         return this->firstName.empty() && this->lastName.empty() && this->nickname.empty() && this->phoneNumber.empty() && this->darkestSecret.empty();
 }
@@ -45,7 +54,6 @@ std::string Contact::PrintLen(std::string str)
 
 void Contact::init()
 {
-    std::cin.ignore();
     this->firstName = GetInput("Please enter you first name: ");
     this->lastName = GetInput("Please enter you last name: ");
     this->nickname = GetInput("Please enter you nickname: ");
@@ -72,4 +80,5 @@ void Contact::displayContact() const
     std::cout << "Nickname: " << this->nickname << std::endl;
     std::cout << "Phone Number: " << this->phoneNumber << std::endl;
     std::cout << "Darkest Secret: " << this->darkestSecret << std::endl;
+    std::cin.ignore();
 }

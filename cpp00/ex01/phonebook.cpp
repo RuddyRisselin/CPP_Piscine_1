@@ -16,6 +16,11 @@ int PhoneBook::GetIndex(std::string str)
     {
         std::cout << str << std::flush;
         std::cin >> index;
+		if (std::cin.eof())
+        {
+            std::cerr << "\nInput stream closed (Ctrl+D detected).\n";
+            std::exit(EXIT_FAILURE);
+        }		
         if (std::cin.good() && (index >= 0 && index <= 8))
 		{
 			if (!Contacts[index].isEmpty())

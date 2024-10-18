@@ -10,16 +10,27 @@ int main()
     std::cout << "\nUse ADD to add a contact";
     std::cout << "\nUse SEARCH to search a contact";
     std::cout << "\nUse EXIT to exit\n";
-    while (input.compare("EXIT") != 0)
+    while (true)
     {
+        std::cout << "> " << std::flush;
+        if(!std::getline(std::cin, input))
+        {
+            std::cout << "\nInput stream closed. Exiting...\n";
+            break;
+        }
+        if (input.empty())
+            continue;       
         if (input.compare("ADD") == 0)
             PhoneBook.addContact();
-        if (input.compare("SEARCH") == 0) {
+        else if (input.compare("SEARCH") == 0)
+        {
             PhoneBook.PrintContact();
             PhoneBook.SearchContact();
         }
-        std::cout << "> " << std::flush;
-        std::cin >> input;
+        else if (input.compare("EXIT") == 0)
+            break;
+        else
+            std::cout << "Unknown command. Please try again." << std::endl;
     }
     return (0);
 }
