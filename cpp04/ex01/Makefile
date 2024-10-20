@@ -1,11 +1,12 @@
-NAME = Polymorphisme
+NAME = brain
 
 SRC = main.cpp \
-	  animal.cpp \
+	  Animal.cpp \
 	  Cat.cpp \
 	  Dog.cpp \
 	  WrongAnimal.cpp \
 	  WrongCat.cpp \
+	  Brain.cpp \
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

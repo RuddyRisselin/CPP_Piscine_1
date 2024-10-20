@@ -29,7 +29,6 @@ Animal::~Animal()
 {
 	std::cout << this->_type << " has been destroyed" << std::endl;
 }
-
 void	Animal::makeSound(void) const
 {
 	std::cout << "makeSound called" << std::endl;

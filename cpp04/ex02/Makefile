@@ -1,11 +1,12 @@
-NAME = Polymorphisme
+NAME = Absract
 
 SRC = main.cpp \
-	  animal.cpp \
+	  AAnimal.cpp \
 	  Cat.cpp \
 	  Dog.cpp \
 	  WrongAnimal.cpp \
 	  WrongCat.cpp \
+	  Brain.cpp \
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
